@@ -23,6 +23,23 @@ function refreshTBA() {
     
     // TEAM NAME (AND TEAM # CHECKER)
     jQuery.ajax({
+        url: baseURL+"team/frc"+getTeam()+"/events"+args,
+        dataType: "json",
+        success: function(json) {
+            element = document.getElementById("teamEvents");
+            element.innerHTML = json.name;
+            validTeam = true;
+        },
+        error: function(data) {
+            element = document.getElementById("teamEvents");
+            element.innerHTML = "[Invalid Team]"
+            alert("[ERROR]\nInvalid Team #.");
+        }
+    });
+}
+
+    // TEAM NAME (AND TEAM # CHECKER)
+    jQuery.ajax({
         url: baseURL+"team/frc"+getTeam()+args,
         dataType: "json",
         success: function(json) {
