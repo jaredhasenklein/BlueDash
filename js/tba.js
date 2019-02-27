@@ -21,9 +21,9 @@ function refreshTBA() {
         }
     });
     
-    // TEAM NAME (AND TEAM # CHECKER)
+    // TEAM EVENTS
     jQuery.ajax({
-        url: baseURL+"team/frc"+getTeam()+"/events"+args,
+        url: baseURL+"team/frc"+getTeam()+"/events/2019"+args,
         dataType: "json",
         success: function(json) {
             element = document.getElementById("teamEvents");
